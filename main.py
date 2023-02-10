@@ -3,10 +3,6 @@ import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-
-import ipywidgets as widgets
-from IPython.display import display
-
 import pandas_profiling
 from streamlit_pandas_profiling import st_profile_report
 

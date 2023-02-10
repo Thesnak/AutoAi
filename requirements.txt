@@ -1,6 +1,6 @@
 pandas
 scikit-learn
-pycrate
+pycaret
 streamlit-pandas-profiling
 pandas_profiling
 numpy
