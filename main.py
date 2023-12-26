@@ -1,11 +1,11 @@
 import os.path
-import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-import pandas_profiling
-from streamlit_pandas_profiling import st_profile_report
+from ydata_profiling import ProfileReport
+import streamlit as st
 
+from streamlit_ydata_profiling import st_profile_report
 from pycaret.classification import setup, compare_models, pull, save_model, load_model,evaluate_model,plot_model,predict_model
 with st.sidebar:
     st.image("AutoAi.png")
