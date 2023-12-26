@@ -40,7 +40,7 @@ if choice == "Profiling":
 if choice == "Modelling":
     st.title("Machine Learning Classification ==============>")
     target = st.selectbox("Select Your Target", df.columns)
-    setup(train_data, target=target, silent=True)
+    setup(train_data, target=target)
     setup_train = pull()
     st.info("This is The ML Classification Experiment settings")
     st.dataframe(setup_train)
