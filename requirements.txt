@@ -1,6 +1,6 @@
+numpy
 pandas
 scikit-learn
 pycaret
-pandas_profiling
-streamlit-pandas-profiling
-numpy
+ydata-profiling
+streamlit-ydata-profiling
