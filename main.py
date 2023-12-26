@@ -24,7 +24,6 @@ if choice == 'Upload':
     if file:
         df = pd.read_csv(file, index_col=None)
         train_data, test_data = train_test_split(df, test_size=0.2, random_state=0)
-        target = st.selectbox("Select Your Target", df.columns)
         st.write("Train")
         st.dataframe(train_data)
         st.write('Test')
@@ -39,20 +38,22 @@ if choice == "Profiling":
     st_profile_report(profile_report)
 
 if choice == "Modelling":
-    st.title("Machine Learning Classification ==============>")
-    setup(train_data, target=target)
-    setup_train = pull()
-    st.info("This is The ML Classification Experiment settings")
-    st.dataframe(setup_train)
-    best_model = compare_models()
-    compare_train = pull()
-    st.info("This is The ML Classification Model")
-    st.dataframe(compare_train)
-    best_model
-    plot_model(best_model, plot='auc' , save=True)
-    plot_model(best_model, plot='pr' , save=True)
-    plot_model(best_model, plot='confusion_matrix',save=True)
-    save_model(best_model, 'best_model')
+    st.title("Machine Learning Classification")
+    target = st.selectbox("Select Your Target", df.columns)
+    if st.button("Train",type="primary"):
+        setup(train_data, target=target)
+        setup_train = pull()
+        st.info("This is The ML Classification Experiment settings")
+        st.dataframe(setup_train)
+        best_model = compare_models()
+        compare_train = pull()
+        st.info("This is The ML Classification Model")
+        st.dataframe(compare_train)
+        best_model
+        plot_model(best_model, plot='auc' , save=True)
+        plot_model(best_model, plot='pr' , save=True)
+        plot_model(best_model, plot='confusion_matrix',save=True)
+        save_model(best_model, 'best_model')
 if choice == "Evaluating":
     if os.path.exists('AUC.png'):
         st.title("AUC :")
