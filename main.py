@@ -46,10 +46,8 @@ if choice == "Modelling":
         st.info("This is The ML Classification Experiment settings")
         st.dataframe(setup_train)
         best_model = compare_models()
-        compare_train = pull()
         st.info("This is The ML Classification Model")
-        st.dataframe(compare_train)
-        best_model
+        st.dataframe(best_model)
         plot_model(best_model, plot='auc' , save=True)
         plot_model(best_model, plot='pr' , save=True)
         plot_model(best_model, plot='confusion_matrix',save=True)
