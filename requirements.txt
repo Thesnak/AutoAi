@@ -1,6 +1,7 @@
 numpy
+streamlit
 pandas
+ydata_profiling
+streamlit_pandas_profiling
 scikit-learn
 pycaret
-ydata-profiling==3.6.2
-streamlit-ydata-profiling
