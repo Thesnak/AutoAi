@@ -24,6 +24,7 @@ if choice == 'Upload':
     if file:
         df = pd.read_csv(file, index_col=None)
         train_data, test_data = train_test_split(df, test_size=0.2, random_state=0)
+        target = st.selectbox("Select Your Target", df.columns)
         st.write("Train")
         st.dataframe(train_data)
         st.write('Test')
@@ -39,7 +40,6 @@ if choice == "Profiling":
 
 if choice == "Modelling":
     st.title("Machine Learning Classification ==============>")
-    target = st.selectbox("Select Your Target", df.columns)
     setup(train_data, target=target)
     setup_train = pull()
     st.info("This is The ML Classification Experiment settings")
